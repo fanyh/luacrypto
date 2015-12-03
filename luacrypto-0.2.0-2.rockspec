@@ -1,10 +1,10 @@
 -- This file was automatically generated for the LuaDist project.
 
 package="luacrypto"
-version="0.2.0-1"
+version="0.2.0-2"
 -- LuaDist source
 source = {
-  tag = "0.2.0-1",
+  tag = "0.2.0-2",
   url = "git://github.com/LuaDist2/luacrypto.git"
 }
 -- Original source
@@ -33,14 +33,14 @@ external_dependencies = {
 }
 
 build = {
-   type = "make",
-   variables = {
-      LIBNAME="crypto.so",
-      LUA_VERSION_NUM="501",
-      LUA_LIBDIR = "$(LIBDIR)",
-      LUA_INC = "$(LUA_INCDIR)",
-      OPENSSL_LIBS="-L$(OPENSSL_LIBDIR) -lcrypto -lssl",
-      OPENSSL_INCS="-I$(OPENSSL_INCDIR)",
-      LIB_OPTION = "$(LIBFLAG)"
-   }
+   type = "builtin",
+   modules = {
+    crypto = {
+      sources = { "src/lcrypto.c" },
+      incdirs = { "$(OPENSSL_INCDIR)", "src/" },
+      libraries = { "crypto" },
+      libdirs = { "$(OPENSSL_LIBDIR)" }
+    }
+   },
+   copy_directories = { "doc", "test" }
 }
