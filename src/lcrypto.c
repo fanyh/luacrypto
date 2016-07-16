@@ -968,7 +968,7 @@ static int verify_fverify(lua_State *L)
 
 static int rand_do_bytes(lua_State *L, int (*bytes)(unsigned char *, int))
 {
-    size_t count = (size_t)luaL_checkint(L, 1);
+    size_t count = (size_t)luaL_checkinteger(L, 1);
     unsigned char tmp[256], *buf = tmp;
     if (count > sizeof tmp)
         buf = (unsigned char *)malloc(count);
@@ -1214,7 +1214,7 @@ static int pkey_from_pem(lua_State *L)
     int private = lua_isboolean(L, 2) && lua_toboolean(L, 2);
     EVP_PKEY **pkey = pkey_new(L);
     BIO *mem = BIO_new(BIO_s_mem());
-    int ret;
+    size_t ret;
 
     ret = BIO_puts(mem, key);
     if (ret != strlen(key))

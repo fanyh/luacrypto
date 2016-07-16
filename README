@@ -1,3 +1,5 @@
+this project is deprecated, use luaossl
+
 LuaCrypto provides a Lua frontend to the OpenSSL cryptographic library.
 The OpenSSL features that are currently exposed are digests (MD5, SHA-1,
 HMAC, and more) and crypto-grade random number generators.

@@ -1,16 +1,16 @@
 -- This file was automatically generated for the LuaDist project.
 
-package = "LuaCrypto"
-version = "0.3.2-1"
+package = "luacrypto"
+version = "0.3.2-2"
 description = {
 	summary = "A Lua frontend to OpenSSL",
 	detailed = [[LuaCrypto is a Lua frontend to the OpenSSL cryptographic library. The OpenSSL features that are currently exposed are: 
 digests (MD5, SHA-1, HMAC, and more), encryption, decryption and crypto-grade random number generators.]],
-	homepage = "http://mkottman.github.com/luacrypto/",
+	homepage = "https://github.com/starius/luacrypto",
 	license = "MIT",
 }
 dependencies = {
-	"lua >= 5.1, < 5.3",
+	"lua >= 5.1",
 }
 external_dependencies = {
 	OPENSSL = {
@@ -19,13 +19,12 @@ external_dependencies = {
 }
 -- LuaDist source
 source = {
-  tag = "0.3.2-1",
+  tag = "0.3.2-2",
   url = "git://github.com/LuaDist2/luacrypto.git"
 }
 -- Original source
 -- source = {
--- 	url = "https://github.com/mkottman/luacrypto/archive/0.3.2.zip",
--- 	dir = "luacrypto-0.3.2",
+-- 	url = "git://github.com/starius/luacrypto.git",
 -- }
 build = {
 	type = "builtin",
